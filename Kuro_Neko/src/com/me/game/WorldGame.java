@@ -35,6 +35,7 @@ public WorldGame()
 	arrCuadros = new Array<Cuadro>();
 	arrplatSing= new Array<PlataformaSingle>();
 	oWorldBox = new World(new Vector2(0, -10),true);
+	////
     oWorldBox.setContactListener(new Colisiones());
 
 	crearGato();
