@@ -4,57 +4,57 @@ filter: Linear,Linear
 repeat: none
 barraNomEq
   rotate: false
-  xy: 504, 586
+  xy: 239, 533
   size: 278, 96
   orig: 278, 96
   offset: 0, 0
   index: -1
 btnSelIzquierda
   rotate: false
-  xy: 804, 313
+  xy: 239, 728
   size: 98, 95
   orig: 98, 95
   offset: 0, 0
   index: -1
 btnSelDerecha
   rotate: false
-  xy: 904, 313
+  xy: 282, 825
   size: 98, 95
   orig: 98, 95
   offset: 0, 0
   index: -1
 barraSeleccion
   rotate: false
-  xy: 504, 484
+  xy: 2, 870
   size: 278, 100
   orig: 278, 100
   offset: 0, 0
   index: -1
 btnEmpezar
   rotate: false
-  xy: 804, 2
+  xy: 239, 631
   size: 200, 95
   orig: 200, 95
   offset: 0, 0
   index: -1
-kuro01
+plataforma
   rotate: false
-  xy: 804, 99
-  size: 171, 212
-  orig: 171, 212
+  xy: 339, 728
+  size: 1056, 78
+  orig: 1056, 78
   offset: 0, 0
   index: -1
-background
-  rotate: false
-  xy: 2, 484
-  size: 500, 500
-  orig: 500, 500
-  offset: 0, 0
-  index: -1
-fondo
+main3
   rotate: false
   xy: 2, 2
-  size: 800, 480
-  orig: 800, 480
+  size: 1060, 529
+  orig: 1060, 529
+  offset: 0, 0
+  index: -1
+kuro
+  rotate: false
+  xy: 2, 533
+  size: 235, 335
+  orig: 235, 335
   offset: 0, 0
   index: -1

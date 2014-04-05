@@ -43,12 +43,17 @@ ImageButton btnSelIzquierda;
 
 	@Override
 	public void draw(float delta) {
+
+		batcher.begin();
+		batcher.draw(Assets.fondo, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		batcher.end();
+		
+
+		Assets.parallaxFondo.render(delta);
+
 		oCam.update();
 		batcher.setProjectionMatrix(oCam.combined);
 
-		batcher.begin();
-		batcher.draw(Assets.fondoMenu, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-		batcher.end();
 	}
 
 }

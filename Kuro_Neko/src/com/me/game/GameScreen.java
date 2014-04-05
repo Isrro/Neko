@@ -14,6 +14,7 @@ public class GameScreen extends Screens{
 	WorldGame oWorld;
 	WorldGameRender renderer;
 	public State state;
+	boolean jump;
 	
 	public GameScreen(Main_Kuro_Neko game) {
 		super(game);
@@ -45,13 +46,17 @@ public class GameScreen extends Screens{
 	}
 
 	private void updaterunning(float delta) {
-		boolean jump = Gdx.input.justTouched();
+		if (Gdx.input.isTouched() || Gdx.input.isKeyPressed(Keys.SPACE))
+			jump = true;
+		 
 		float acel_x = 0;
 		if(Gdx.input.isKeyPressed(Keys.A))
 		    acel_x = -1;
 		else if(Gdx.input.isKeyPressed(Keys.D))
 			acel_x = 1;
 		oWorld.update(delta,acel_x,jump);
+		
+		jump = false;
 	}
 
 	private void updateready(float delta) {
