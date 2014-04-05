@@ -37,6 +37,7 @@ public WorldGame()
 	oWorldBox = new World(new Vector2(0, -10),true);
 	////
     oWorldBox.setContactListener(new Colisiones());
+    ///
 
 	crearGato();
 	//crearPiso();
