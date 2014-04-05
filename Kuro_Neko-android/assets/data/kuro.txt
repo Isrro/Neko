@@ -1,0 +1,60 @@
+kuro.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+barraNomEq
+  rotate: false
+  xy: 504, 586
+  size: 278, 96
+  orig: 278, 96
+  offset: 0, 0
+  index: -1
+btnSelIzquierda
+  rotate: false
+  xy: 804, 313
+  size: 98, 95
+  orig: 98, 95
+  offset: 0, 0
+  index: -1
+btnSelDerecha
+  rotate: false
+  xy: 904, 313
+  size: 98, 95
+  orig: 98, 95
+  offset: 0, 0
+  index: -1
+barraSeleccion
+  rotate: false
+  xy: 504, 484
+  size: 278, 100
+  orig: 278, 100
+  offset: 0, 0
+  index: -1
+btnEmpezar
+  rotate: false
+  xy: 804, 2
+  size: 200, 95
+  orig: 200, 95
+  offset: 0, 0
+  index: -1
+kuro01
+  rotate: false
+  xy: 804, 99
+  size: 171, 212
+  orig: 171, 212
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 2, 484
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+fondo
+  rotate: false
+  xy: 2, 2
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
