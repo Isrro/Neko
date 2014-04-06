@@ -2,46 +2,95 @@ kuro.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+Frame0
+  rotate: false
+  xy: 1040, 638
+  size: 753, 643
+  orig: 753, 643
+  offset: 0, 0
+  index: -1
+siguiente
+  rotate: false
+  xy: 1515, 1283
+  size: 382, 375
+  orig: 382, 375
+  offset: 0, 0
+  index: -1
+Frame2
+  rotate: false
+  xy: 2, 613
+  size: 756, 672
+  orig: 756, 672
+  offset: 0, 0
+  index: -1
 barraNomEq
   rotate: false
-  xy: 239, 533
+  xy: 760, 715
   size: 278, 96
   orig: 278, 96
   offset: 0, 0
   index: -1
+Frame1
+  rotate: false
+  xy: 2, 1287
+  size: 753, 670
+  orig: 753, 670
+  offset: 0, 0
+  index: -1
+Frame4
+  rotate: false
+  xy: 1064, 2
+  size: 761, 634
+  orig: 761, 634
+  offset: 0, 0
+  index: -1
+Frame3
+  rotate: false
+  xy: 757, 1287
+  size: 756, 662
+  orig: 756, 662
+  offset: 0, 0
+  index: -1
 btnSelIzquierda
   rotate: false
-  xy: 239, 728
+  xy: 1827, 99
   size: 98, 95
   orig: 98, 95
   offset: 0, 0
   index: -1
 btnSelDerecha
   rotate: false
-  xy: 282, 825
+  xy: 1927, 99
   size: 98, 95
   orig: 98, 95
   offset: 0, 0
   index: -1
 barraSeleccion
   rotate: false
-  xy: 2, 870
+  xy: 760, 613
   size: 278, 100
   orig: 278, 100
   offset: 0, 0
   index: -1
 btnEmpezar
   rotate: false
-  xy: 239, 631
+  xy: 1827, 2
   size: 200, 95
   orig: 200, 95
   offset: 0, 0
   index: -1
 plataforma
   rotate: false
-  xy: 339, 728
+  xy: 2, 533
   size: 1056, 78
   orig: 1056, 78
+  offset: 0, 0
+  index: -1
+anterior
+  rotate: false
+  xy: 1515, 1660
+  size: 382, 375
+  orig: 382, 375
   offset: 0, 0
   index: -1
 main3
@@ -49,12 +98,5 @@ main3
   xy: 2, 2
   size: 1060, 529
   orig: 1060, 529
-  offset: 0, 0
-  index: -1
-kuro
-  rotate: false
-  xy: 2, 533
-  size: 235, 335
-  orig: 235, 335
   offset: 0, 0
   index: -1

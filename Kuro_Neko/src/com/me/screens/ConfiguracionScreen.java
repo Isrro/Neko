@@ -14,7 +14,8 @@ ImageButton btnSelIzquierda;
 	public ConfiguracionScreen(final Main_Kuro_Neko game) {
 		super(game);
 		btnSelIzquierda = new ImageButton(new TextureRegionDrawable(Assets.btnSelIzquierda));
-		btnSelIzquierda.setPosition(0,0);
+		btnSelIzquierda.setPosition(SCREEN_WIDTH -100f, SCREEN_HEIGHT -100f);
+		btnSelIzquierda.setSize(100f, 100f);
 		
 		btnSelIzquierda.addListener(new InputListener(){
 			@Override

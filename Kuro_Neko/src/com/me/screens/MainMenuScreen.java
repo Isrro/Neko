@@ -23,7 +23,8 @@ public class MainMenuScreen extends Screens {
 		btnJugar.setPosition(SCREEN_WIDTH  - btnJugar.getWidth() , 50);
 		
 		btnSelDerecha = new ImageButton(new TextureRegionDrawable(Assets.btnSelDerecha));
-		btnSelDerecha.setPosition(SCREEN_WIDTH - btnSelDerecha.getWidth(), SCREEN_HEIGHT - btnSelDerecha.getHeight());
+		btnSelDerecha.setPosition(SCREEN_WIDTH -100f, SCREEN_HEIGHT -100f);
+		btnSelDerecha.setSize(100f, 100f);
 		btnJugar.addListener(new InputListener(){
 			
 			@Override

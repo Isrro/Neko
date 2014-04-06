@@ -65,6 +65,7 @@ private void craerCaja(float x, float y) {
 
 	FixtureDef fixDef = new FixtureDef();
 	fixDef.shape = shape;
+	fixDef.friction = 0;
 
 	oBody.createFixture(fixDef);
 
@@ -106,6 +107,7 @@ private void crearPlataformaSingle(float x , float y,boolean estado)
 
 		FixtureDef fixDef = new FixtureDef();
 		fixDef.shape = shape;
+		fixDef.friction = 0;
 
 		oBody.createFixture(fixDef);
 		oBody.setUserData(oPlata);
@@ -118,7 +120,7 @@ private void crearPlataforma() {
 	//para declarar el cuerpo necesitamos una definicion
 	BodyDef bd = new BodyDef();
 	bd.position.x = 0;
-	bd.position.y = 0;
+	bd.position.y = 0.6f;
 	
 	bd.type = BodyType.StaticBody;
 	
@@ -131,6 +133,7 @@ private void crearPlataforma() {
 	//necestamos una fixture
 	FixtureDef fixture = new FixtureDef();
 	fixture.shape = shape;
+	fixture.friction = 0;
 	oBody.createFixture(fixture);
 	//para que no rote el cuadro
 	oBody.setFixedRotation(true);

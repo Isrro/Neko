@@ -16,6 +16,8 @@ public class Assets {
 	public static AtlasRegion btnSelIzquierda;
 	public static Animation Kuro;
 	public static AtlasRegion fondo;
+	public static AtlasRegion plataforma;
+	public static AtlasRegion Kuro_quieto;
 	
 	public static ParallaxBackground parallaxFondo;
 	
@@ -24,15 +26,19 @@ public class Assets {
 		TextureAtlas atlas = new TextureAtlas(
 				Gdx.files.internal("data/kuro.txt"));
 		
-		AtlasRegion K1 = atlas.findRegion("kuro");
-		AtlasRegion K2 = atlas.findRegion("kuro");
-		AtlasRegion K3 = atlas.findRegion("kuro");
+		AtlasRegion K1 = atlas.findRegion("Frame0");
+		AtlasRegion K2 = atlas.findRegion("Frame1");
+		AtlasRegion K3 = atlas.findRegion("Frame2");
+		AtlasRegion K4 = atlas.findRegion("Frame3");
+		AtlasRegion K5 = atlas.findRegion("Frame4");
 		
-		Kuro = new Animation(0.3f, K1,K2,K3);
+		Kuro = new Animation(0.3f, K1,K2,K3,K4,K5);
 		
+		Kuro_quieto = atlas.findRegion("Frame2");
+		plataforma = atlas.findRegion("plataforma");
 		btnEmpezar = atlas.findRegion("btnEmpezar");
-		btnSelDerecha = atlas.findRegion("btnSelDerecha");
-		btnSelIzquierda = atlas.findRegion("btnSelIzquierda");
+		btnSelDerecha = atlas.findRegion("siguiente");
+		btnSelIzquierda = atlas.findRegion("anterior");
 		fondo = atlas.findRegion("main3");
 		
 		ParallaxLayer floor = new ParallaxLayer(atlas.findRegion("main3"), new Vector2(24, 0), new Vector2(0, 0), new Vector2(-1, 700), 1060, 529);
