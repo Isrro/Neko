@@ -46,25 +46,17 @@ public class WorldGameRender {
 				Screens.WORLD_HEIGHT);
 		batcher.enableBlending();
 		dibujarGato();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 		dibujarPlataformas();
 		dibujarMonedas();
->>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
-=======
+
 		dibujarPlataformas();
 		dibujarMonedas();
->>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
+
 		batcher.end();
 		renderBox.render(oWorld.oWorldBox, oCam.combined);
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
+
 	private void dibujarMonedas() {
 int length = oWorld.arrMonedas.size;
 		
@@ -92,10 +84,6 @@ int length = oWorld.arrMonedas.size;
 		
 	}
 
-<<<<<<< HEAD
->>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
-=======
->>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
 	private void dibujarGato() {
 		TextureRegion keyframe;
 		if(oWorld.OGato.state == Gato.State.saltando)
