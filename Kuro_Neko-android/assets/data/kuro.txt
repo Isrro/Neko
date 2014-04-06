@@ -2,95 +2,88 @@ kuro.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-Frame0
+frame4
   rotate: false
-  xy: 1040, 638
-  size: 753, 643
-  orig: 753, 643
+  xy: 186, 690
+  size: 183, 153
+  orig: 183, 153
+  offset: 0, 0
+  index: -1
+frame3
+  rotate: false
+  xy: 2, 860
+  size: 183, 158
+  orig: 183, 158
   offset: 0, 0
   index: -1
 siguiente
   rotate: false
-  xy: 1515, 1283
-  size: 382, 375
-  orig: 382, 375
-  offset: 0, 0
-  index: -1
-Frame2
-  rotate: false
-  xy: 2, 613
-  size: 756, 672
-  orig: 756, 672
+  xy: 471, 732
+  size: 92, 91
+  orig: 92, 91
   offset: 0, 0
   index: -1
 barraNomEq
   rotate: false
-  xy: 760, 715
+  xy: 187, 845
   size: 278, 96
   orig: 278, 96
   offset: 0, 0
   index: -1
-Frame1
+frame0
   rotate: false
-  xy: 2, 1287
-  size: 753, 670
-  orig: 753, 670
-  offset: 0, 0
-  index: -1
-Frame4
-  rotate: false
-  xy: 1064, 2
-  size: 761, 634
-  orig: 761, 634
-  offset: 0, 0
-  index: -1
-Frame3
-  rotate: false
-  xy: 757, 1287
-  size: 756, 662
-  orig: 756, 662
+  xy: 186, 533
+  size: 182, 155
+  orig: 182, 155
   offset: 0, 0
   index: -1
 btnSelIzquierda
   rotate: false
-  xy: 1827, 99
+  xy: 371, 732
   size: 98, 95
   orig: 98, 95
   offset: 0, 0
   index: -1
+frame1
+  rotate: false
+  xy: 2, 697
+  size: 182, 161
+  orig: 182, 161
+  offset: 0, 0
+  index: -1
 btnSelDerecha
   rotate: false
-  xy: 1927, 99
+  xy: 467, 829
   size: 98, 95
   orig: 98, 95
   offset: 0, 0
   index: -1
 barraSeleccion
   rotate: false
-  xy: 760, 613
+  xy: 370, 533
   size: 278, 100
   orig: 278, 100
   offset: 0, 0
   index: -1
 btnEmpezar
   rotate: false
-  xy: 1827, 2
+  xy: 371, 635
   size: 200, 95
   orig: 200, 95
   offset: 0, 0
   index: -1
 plataforma
   rotate: false
-  xy: 2, 533
+  xy: 187, 943
   size: 1056, 78
   orig: 1056, 78
   offset: 0, 0
   index: -1
 anterior
   rotate: false
-  xy: 1515, 1660
-  size: 382, 375
-  orig: 382, 375
+  xy: 565, 732
+  size: 92, 91
+  orig: 92, 91
   offset: 0, 0
   index: -1
 main3
@@ -98,5 +91,12 @@ main3
   xy: 2, 2
   size: 1060, 529
   orig: 1060, 529
+  offset: 0, 0
+  index: -1
+frame2
+  rotate: false
+  xy: 2, 533
+  size: 182, 162
+  orig: 182, 162
   offset: 0, 0
   index: -1
