@@ -4,86 +4,93 @@ filter: Linear,Linear
 repeat: none
 frame4
   rotate: false
-  xy: 186, 690
+  xy: 1060, 850
   size: 183, 153
   orig: 183, 153
   offset: 0, 0
   index: -1
 frame3
   rotate: false
-  xy: 2, 860
+  xy: 991, 533
   size: 183, 158
   orig: 183, 158
   offset: 0, 0
   index: -1
 siguiente
   rotate: false
-  xy: 471, 732
+  xy: 1176, 2
   size: 92, 91
   orig: 92, 91
   offset: 0, 0
   index: -1
 barraNomEq
   rotate: false
-  xy: 187, 845
+  xy: 1245, 795
   size: 278, 96
   orig: 278, 96
   offset: 0, 0
   index: -1
 frame0
   rotate: false
-  xy: 186, 533
+  xy: 991, 693
   size: 182, 155
   orig: 182, 155
   offset: 0, 0
   index: -1
 btnSelIzquierda
   rotate: false
-  xy: 371, 732
+  xy: 1447, 893
   size: 98, 95
   orig: 98, 95
   offset: 0, 0
   index: -1
 frame1
   rotate: false
-  xy: 2, 697
+  xy: 807, 697
   size: 182, 161
   orig: 182, 161
   offset: 0, 0
   index: -1
 btnSelDerecha
   rotate: false
-  xy: 467, 829
+  xy: 1547, 2
   size: 98, 95
   orig: 98, 95
   offset: 0, 0
   index: -1
 barraSeleccion
   rotate: false
-  xy: 370, 533
+  xy: 1175, 693
   size: 278, 100
   orig: 278, 100
   offset: 0, 0
   index: -1
 btnEmpezar
   rotate: false
-  xy: 371, 635
+  xy: 1245, 893
   size: 200, 95
   orig: 200, 95
   offset: 0, 0
   index: -1
 plataforma
   rotate: false
-  xy: 187, 943
+  xy: 2, 936
   size: 1056, 78
   orig: 1056, 78
   offset: 0, 0
   index: -1
 anterior
   rotate: false
-  xy: 565, 732
+  xy: 1064, 2
   size: 92, 91
   orig: 92, 91
+  offset: 0, 0
+  index: -1
+main2
+  rotate: false
+  xy: 2, 533
+  size: 803, 401
+  orig: 803, 401
   offset: 0, 0
   index: -1
 main3
@@ -95,7 +102,7 @@ main3
   index: -1
 frame2
   rotate: false
-  xy: 2, 533
+  xy: 807, 533
   size: 182, 162
   orig: 182, 162
   offset: 0, 0
