@@ -50,9 +50,13 @@ public class WorldGameRender {
 		dibujarPlataformas();
 		dibujarMonedas();
 		dibujarTortugaS();
+		dibujarPlataformas();
+		dibujarMonedas();
+
 		batcher.end();
 		renderBox.render(oWorld.oWorldBox, oCam.combined);
 	}
+
 
 	private void dibujarTortugaS() {
 int length = oWorld.arrTortugas.size;
