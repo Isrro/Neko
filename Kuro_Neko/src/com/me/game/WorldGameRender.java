@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.me.objetos.Moneda;
 import com.me.objetos.Gato;
 import com.me.mygdxgame.Assets;
 import com.me.screens.Screens;
@@ -44,10 +45,45 @@ public class WorldGameRender {
 				Screens.WORLD_HEIGHT);
 		batcher.enableBlending();
 		dibujarGato();
+<<<<<<< HEAD
+=======
+		dibujarPlataformas();
+		dibujarMonedas();
+>>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
 		batcher.end();
 		renderBox.render(oWorld.oWorldBox, oCam.combined);
 	}
 
+<<<<<<< HEAD
+=======
+	private void dibujarMonedas() {
+int length = oWorld.arrMonedas.size;
+		
+		for(int i = 0; i < length;i++){
+			Moneda oMon = oWorld.arrMonedas.get(i);
+			TextureRegion keyframe;
+
+			//true es que la aniimacion se repeteria muchas veces
+			keyframe = Assets.btnSelDerecha;
+
+		    batcher.draw(keyframe, oMon.posicion.x - 0.2f, oMon.posicion.y - 0.2f, 0.4f , .4f );
+		}
+	}
+
+	private void dibujarPlataformas() {
+		int lenght = oWorld.arrplatSing.size;
+		for(int i = 0; i < lenght; i++)
+		{
+			PlataformaSingle obj = oWorld.arrplatSing.get(i);
+			TextureRegion keyframe = Assets.plataforma;
+
+		    batcher.draw(keyframe, obj.posicion.x - 0.4f, obj.posicion.y - 0.1f, .8f , .2f );
+		}
+		
+		
+	}
+
+>>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
 	private void dibujarGato() {
 		TextureRegion keyframe;
 		if(oWorld.OGato.state == Gato.State.saltando)
