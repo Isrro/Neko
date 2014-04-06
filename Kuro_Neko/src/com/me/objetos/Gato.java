@@ -12,6 +12,7 @@ public class Gato {
 	public State state;
 	public float statetime;
 	public boolean jump;
+	public int lado;
 
 	public Vector2 position;
 	public Vector2 velocidad;

@@ -60,8 +60,9 @@ public class WorldGameRender {
 		}
 		else
 			keyframe = Assets.Kuro.getKeyFrame(oWorld.OGato.statetime, true);
-		if(oWorld.OGato.velocidad.x > 0)
-		batcher.draw(keyframe, oWorld.OGato.position.x -0.35f, oWorld.OGato.position.y-0.4f, 0.7f, 1f);
+		
+		if(oWorld.OGato.lado== 1)
+		    batcher.draw(keyframe, oWorld.OGato.position.x -0.35f, oWorld.OGato.position.y-0.4f, 0.7f, 1f);
 		else 
 			batcher.draw(keyframe, oWorld.OGato.position.x +0.35f, oWorld.OGato.position.y-0.4f, -0.7f, 1f);
 		

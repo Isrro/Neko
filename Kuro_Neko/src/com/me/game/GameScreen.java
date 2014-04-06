@@ -51,9 +51,15 @@ public class GameScreen extends Screens{
 		 
 		float acel_x = 0;
 		if(Gdx.input.isKeyPressed(Keys.A))
+		{
 		    acel_x = -1;
+		    oWorld.OGato.lado=0;
+		}
 		else if(Gdx.input.isKeyPressed(Keys.D))
+		{
 			acel_x = 1;
+			oWorld.OGato.lado=1;
+		}
 		oWorld.update(delta,acel_x,jump);
 		
 		jump = false;
