@@ -54,10 +54,8 @@ public class Gato {
 
 	public void jump() {
 		if (state == State.cayendo) 
-		{	
-			
-			state = State.standing;
-			
+		{				
+			state = State.standing;			
 		}
 }
 }

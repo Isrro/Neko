@@ -18,7 +18,6 @@ import com.badlogic.gdx.utils.Array;
 import com.me.screens.Screens;
 import com.me.objetos.Cuadro;
 import com.me.objetos.Gato;
-import com.me.objetos.Gato.State;
 import com.me.objetos.PlataformaSingle;
 
 public class WorldGame {
@@ -41,6 +40,8 @@ public WorldGame()
 
 	crearGato();
 	//crearPiso();
+	crearPlataformaSingle(3, 1, true);
+	crearPlataformaSingle(5, 1, false);
 	crearPlataforma();
 	craerCaja(1,1);
 }
@@ -178,8 +179,26 @@ public void update(float delta,float acel_x,boolean jump) {
 		{
 			updateCuadro(delta,body);
 		}
+		if(body.getUserData() instanceof PlataformaSingle)
+		{
+			updatePlataSing(delta,body);
+		}
 		
 	}
+}
+
+private void updatePlataSing(float delta, Body body) {
+	// TODO Auto-generated method stub
+	PlataformaSingle obj = (PlataformaSingle) body.getUserData();
+	obj.update(body, delta);
+	
+	if(obj.state == PlataformaSingle.State.rompiendo)// && obj.state_time>.3f)
+	{
+		oWorldBox.destroyBody(body);		
+		arrplatSing.removeValue(obj, true);
+	}
+	
+	
 }
 
 private void updateCuadro(float delta, Body body) {
@@ -208,7 +227,6 @@ public class Colisiones implements ContactListener {
 
 	private void ContactoPersonaje(Fixture Personaje, Fixture otracosa) {
 		
-		Gdx.app.log("colicionP22", "  ");
 		Gato oGato = (Gato) Personaje.getBody().getUserData();
 
 		Object Ootracosa = otracosa.getBody().getUserData();
@@ -222,7 +240,12 @@ public class Colisiones implements ContactListener {
 			Cuadro obj = (Cuadro) Ootracosa;
 			obj.Hit();
 			oGato.jump();
-		}		
+		}	
+		else if (Ootracosa instanceof PlataformaSingle) {
+			PlataformaSingle obj = (PlataformaSingle) Ootracosa;
+			obj.hit();
+			oGato.jump();
+		}	
 	}
 
 	// estan seprados los objetos, despues de toparon
