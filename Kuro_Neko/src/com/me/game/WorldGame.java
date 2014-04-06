@@ -1,9 +1,12 @@
 package com.me.game;
 
+import java.util.Random;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -18,6 +21,7 @@ import com.badlogic.gdx.utils.Array;
 import com.me.screens.Screens;
 import com.me.objetos.Cuadro;
 import com.me.objetos.Gato;
+import com.me.objetos.Moneda;
 import com.me.objetos.PlataformaSingle;
 
 public class WorldGame {
@@ -27,23 +31,59 @@ World oWorldBox;
 Array<Body> arrBodies;
 Array<Cuadro> arrCuadros;
 Array<PlataformaSingle>arrplatSing;
+Array<Moneda> arrMonedas;
+Random Oran;
+int monedas;
 
 public WorldGame()
 {
 	arrBodies = new Array<Body>();
 	arrCuadros = new Array<Cuadro>();
 	arrplatSing= new Array<PlataformaSingle>();
+	arrMonedas = new Array<Moneda>();
+	Oran = new Random();
 	oWorldBox = new World(new Vector2(0, -10),true);
 	////
     oWorldBox.setContactListener(new Colisiones());
     ///
 
 	crearGato();
-	//crearPiso();
+	crearParedIzquierda();
 	crearPlataformaSingle(3, 1.5f, true);
 	crearPlataformaSingle(5, 1.5f, false);
 	crearPlataforma();
-	craerCaja(1,1);
+	craerCaja(1,1.5f);
+	crearMonedas();
+}
+private void crearMonedas() {
+	float x = Oran.nextFloat() * Screens.WORLD_WIDTH - .3f;
+	float y = 1.5f;
+
+	Moneda oMon = new Moneda(x, y);
+	
+	arrMonedas.add(oMon);
+
+	BodyDef bd = new BodyDef();
+	bd.type = BodyType.KinematicBody;
+	bd.position.x = oMon.posicion.x;
+	bd.position.y = oMon.posicion.y;
+
+	Body oBody = oWorldBox.createBody(bd);
+
+	CircleShape shape = new CircleShape();
+	shape.setRadius(.2f);
+
+	FixtureDef fixDef = new FixtureDef();
+	fixDef.shape = shape;
+	//para que cuando choque no lo tome como otra plataforma e impulse a nuestro personaje
+	// que la moneda no choque con nada pero aun asi reciba eventos de colisiones
+	fixDef.isSensor = true;
+
+	oBody.createFixture(fixDef);
+
+	oBody.setUserData(oMon);
+
+
 }
 
 private void craerCaja(float x, float y) {
@@ -72,7 +112,7 @@ private void craerCaja(float x, float y) {
 	oBody.setUserData(oCuad);	
 }
 
-private void crearPiso() {
+private void crearParedIzquierda() {
 	//inicializar piso
 			//para declarar el cuerpo necesitamos una definicion
 			BodyDef bd = new BodyDef();
@@ -83,10 +123,11 @@ private void crearPiso() {
 			Body oBody = oWorldBox.createBody(bd);		
 			//haremos una linea
 			EdgeShape shape = new EdgeShape();
-			shape.set(0, 0, Screens.WORLD_WIDTH, 0);
+			shape.set(0,Screens.WORLD_HEIGHT,0, 0);
 			//necestamos una fixture
 			FixtureDef fixture = new FixtureDef();
 			fixture.shape = shape;
+			fixture.friction = 0;
 			oBody.createFixture(fixture);
 			oBody.setUserData("pared");
 	
@@ -119,7 +160,7 @@ private void crearPlataforma() {
 	
 	//para declarar el cuerpo necesitamos una definicion
 	BodyDef bd = new BodyDef();
-	bd.position.x = 0;
+	bd.position.x = 10;
 	bd.position.y = 0.6f;
 	
 	bd.type = BodyType.StaticBody;
@@ -129,7 +170,7 @@ private void crearPlataforma() {
 	
 	//haremos un rectangulo
 	PolygonShape shape = new PolygonShape();
-	shape.setAsBox(20f, 0.1f);
+	shape.setAsBox(10f, 0.1f);
 	//necestamos una fixture
 	FixtureDef fixture = new FixtureDef();
 	fixture.shape = shape;
@@ -186,8 +227,28 @@ public void update(float delta,float acel_x,boolean jump) {
 		{
 			updatePlataSing(delta,body);
 		}
+		if(body.getUserData() instanceof Moneda)
+		{
+			updateMonedas(delta,body);
+		}
 		
 	}
+}
+
+private void updateMonedas(float delta, Body body) {
+	Moneda obj = (Moneda) body.getUserData();
+// el .3 es por el tiempo qeu dura la animacion
+	if (obj.state == Moneda.State.Agarrada) {
+	// destruye el cuerpo
+	oWorldBox.destroyBody(body);
+	crearMonedas();
+	// quita el obejto del arreglo
+	arrMonedas.removeValue(obj, true);
+	//aqui tambien podria ir el int monedas
+	return;
+	}
+	obj.update(body, delta);
+
 }
 
 private void updatePlataSing(float delta, Body body) {
@@ -249,6 +310,12 @@ public class Colisiones implements ContactListener {
 			obj.hit();
 			oGato.jump();
 		}	
+		else if (Ootracosa instanceof Moneda)
+		{
+			Moneda obj = (Moneda) Ootracosa;
+			obj.Hit();
+			monedas++;
+		}
 	}
 
 	// estan seprados los objetos, despues de toparon

@@ -97,18 +97,17 @@ public class GameScreen extends Screens{
 	}
 
 	private void drawgameover(float delta) {
-		// TODO Auto-generated method stub
+		Assets.Font.draw(batcher, "Haz perdido", 100, 200);		
 		
 	}
 
 	private void drawrunning(float delta) {
-		// TODO Auto-generated method stub
+		Assets.Font.draw(batcher, "Monedas: " + oWorld.monedas, 0, oCam.position.y);
 		
 	}
 
 	private void drawready(float delta) {
-		// TODO Auto-generated method stub
-		
+		Assets.Font.draw(batcher, "Toca para iniciar", 0, 200); 
 	}
 
 }

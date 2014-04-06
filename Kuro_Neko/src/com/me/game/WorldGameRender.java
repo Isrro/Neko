@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.me.objetos.Moneda;
 import com.me.objetos.Gato;
 import com.me.objetos.PlataformaSingle;
 import com.me.mygdxgame.Assets;
@@ -46,8 +47,23 @@ public class WorldGameRender {
 		batcher.enableBlending();
 		dibujarGato();
 		dibujarPlataformas();
+		dibujarMonedas();
 		batcher.end();
 		renderBox.render(oWorld.oWorldBox, oCam.combined);
+	}
+
+	private void dibujarMonedas() {
+int length = oWorld.arrMonedas.size;
+		
+		for(int i = 0; i < length;i++){
+			Moneda oMon = oWorld.arrMonedas.get(i);
+			TextureRegion keyframe;
+
+			//true es que la aniimacion se repeteria muchas veces
+			keyframe = Assets.btnSelDerecha;
+
+		    batcher.draw(keyframe, oMon.posicion.x - 0.2f, oMon.posicion.y - 0.2f, 0.4f , .4f );
+		}
 	}
 
 	private void dibujarPlataformas() {
