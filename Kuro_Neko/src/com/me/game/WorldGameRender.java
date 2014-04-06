@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.me.objetos.Gato;
+import com.me.objetos.PlataformaSingle;
 import com.me.mygdxgame.Assets;
 import com.me.screens.Screens;
 import com.me.game.WorldGame;
@@ -44,8 +45,22 @@ public class WorldGameRender {
 				Screens.WORLD_HEIGHT);
 		batcher.enableBlending();
 		dibujarGato();
+		dibujarPlataformas();
 		batcher.end();
 		renderBox.render(oWorld.oWorldBox, oCam.combined);
+	}
+
+	private void dibujarPlataformas() {
+		int lenght = oWorld.arrplatSing.size;
+		for(int i = 0; i < lenght; i++)
+		{
+			PlataformaSingle obj = oWorld.arrplatSing.get(i);
+			TextureRegion keyframe = Assets.plataforma;
+
+		    batcher.draw(keyframe, obj.posicion.x - 0.4f, obj.posicion.y - 0.1f, .8f , .2f );
+		}
+		
+		
 	}
 
 	private void dibujarGato() {

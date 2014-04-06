@@ -40,8 +40,8 @@ public WorldGame()
 
 	crearGato();
 	//crearPiso();
-	crearPlataformaSingle(3, 1, true);
-	crearPlataformaSingle(5, 1, false);
+	crearPlataformaSingle(3, 1.5f, true);
+	crearPlataformaSingle(5, 1.5f, false);
 	crearPlataforma();
 	craerCaja(1,1);
 }
@@ -103,7 +103,7 @@ private void crearPlataformaSingle(float x , float y,boolean estado)
 		Body oBody = oWorldBox.createBody(bd);
 
 		PolygonShape shape = new PolygonShape();
-		shape.setAsBox(.3f,  .1f);
+		shape.setAsBox(.4f,  .1f);
 
 		FixtureDef fixDef = new FixtureDef();
 		fixDef.shape = shape;

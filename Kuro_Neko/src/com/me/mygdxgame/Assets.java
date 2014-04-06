@@ -32,9 +32,9 @@ public class Assets {
 		AtlasRegion K4 = atlas.findRegion("frame3");
 		AtlasRegion K5 = atlas.findRegion("frame4");
 		
-		Kuro = new Animation(0.3f, K1,K2,K3,K4,K5);
+		Kuro = new Animation(0.15f, K1,K2,K3,K4,K5);
 		
-		Kuro_quieto = atlas.findRegion("Frame2");
+		Kuro_quieto = atlas.findRegion("frame2");
 		plataforma = atlas.findRegion("plataforma");
 		btnEmpezar = atlas.findRegion("btnEmpezar");
 		btnSelDerecha = atlas.findRegion("siguiente");
