@@ -2,6 +2,8 @@ package com.me.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.me.game.WorldGame;
+import com.me.screens.MainMenuScreen;
 import com.me.mygdxgame.Assets;
 import com.me.game.WorldGameRender;
 import com.me.mygdxgame.Main_Kuro_Neko;
@@ -41,7 +43,10 @@ public class GameScreen extends Screens{
 	}
 
 	private void updategameover(float delta) {
-		// TODO Auto-generated method stub
+		if(Gdx.input.isTouched())
+	{
+		game.setScreen(new MainMenuScreen(game));
+	}
 		
 	}
 
@@ -61,7 +66,10 @@ public class GameScreen extends Screens{
 			oWorld.OGato.lado=1;
 		}
 		oWorld.update(delta,acel_x,jump);
-		
+		if(oWorld.state == WorldGame.State.GameOver)
+		{
+			state = State.gameover;
+		}	
 		jump = false;
 	}
 

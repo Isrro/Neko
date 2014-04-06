@@ -58,5 +58,14 @@ public class Gato {
 		{				
 			state = State.standing;			
 		}
-}
+						}
+	public void hit()
+	{
+		if(state != State.muerto)
+		{
+		state = State.muerto;
+		statetime = 0;
+		}
+		//siempre que cambiamos de un estado a otro reiniciamos el tiempo 
+	}
 }

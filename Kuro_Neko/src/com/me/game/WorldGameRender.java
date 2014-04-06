@@ -7,6 +7,7 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.me.objetos.Moneda;
 import com.me.objetos.Gato;
 import com.me.objetos.PlataformaSingle;
+import com.me.objetos.Tortuga;
 import com.me.mygdxgame.Assets;
 import com.me.screens.Screens;
 import com.me.game.WorldGame;
@@ -48,8 +49,26 @@ public class WorldGameRender {
 		dibujarGato();
 		dibujarPlataformas();
 		dibujarMonedas();
+		dibujarTortugaS();
 		batcher.end();
 		renderBox.render(oWorld.oWorldBox, oCam.combined);
+	}
+
+	private void dibujarTortugaS() {
+int length = oWorld.arrTortugas.size;
+
+	for(int i = 0; i < length;i++){
+	Tortuga oTor = oWorld.arrTortugas.get(i);
+	TextureRegion keyframe;
+
+	//true es que la aniimacion se repeteria muchas veces
+	keyframe = Assets.nyancat.getKeyFrame(oTor.state_time, true);
+
+	if(oTor.velocidad.x > 0)
+    batcher.draw(keyframe, oTor.posicion.x - 0.2f, oTor.posicion.y - 0.2f, 0.4f , .4f );
+	else
+	    batcher.draw(keyframe, oTor.posicion.x + 0.2f, oTor.posicion.y - 0.2f, - 0.4f , .4f );
+}
 	}
 
 	private void dibujarMonedas() {

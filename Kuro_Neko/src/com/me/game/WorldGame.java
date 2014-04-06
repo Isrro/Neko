@@ -23,24 +23,34 @@ import com.me.objetos.Cuadro;
 import com.me.objetos.Gato;
 import com.me.objetos.Moneda;
 import com.me.objetos.PlataformaSingle;
+import com.me.objetos.Tortuga;
 
 public class WorldGame {
 
+	public enum State
+	{
+		Running, GameOver
+	}
+	
+State state;
 Gato OGato;
 World oWorldBox;
 Array<Body> arrBodies;
 Array<Cuadro> arrCuadros;
 Array<PlataformaSingle>arrplatSing;
 Array<Moneda> arrMonedas;
+Array<Tortuga> arrTortugas;
 Random Oran;
 int monedas;
 
 public WorldGame()
 {
+	state = State.Running;
 	arrBodies = new Array<Body>();
 	arrCuadros = new Array<Cuadro>();
 	arrplatSing= new Array<PlataformaSingle>();
 	arrMonedas = new Array<Moneda>();
+	arrTortugas = new Array<Tortuga>();
 	Oran = new Random();
 	oWorldBox = new World(new Vector2(0, -10),true);
 	////
@@ -54,6 +64,37 @@ public WorldGame()
 	crearPlataforma();
 	craerCaja(1,1.5f);
 	crearMonedas();
+	crearTortugas();
+}
+private void crearTortugas() {
+	//inicializar la tortuga
+	//para declarar el cuerpo necesitamos una definicion
+
+	float x = Oran.nextFloat() * Screens.WORLD_WIDTH;
+	float y = Oran.nextFloat() * Screens.WORLD_HEIGHT;
+	
+		Tortuga oTortuga = new Tortuga(x, y,3);
+			BodyDef bd = new BodyDef();
+			bd.position.x = oTortuga.posicion.x;
+			bd.position.y = oTortuga.posicion.y;
+			
+			bd.type = BodyType.KinematicBody;		
+			//creamos el cuerpo
+			Body oBody = oWorldBox.createBody(bd);
+			
+			//haremos una linea
+			CircleShape shape = new CircleShape();
+			shape.setRadius(0.1f);
+			//necestamos una fixture
+			FixtureDef fixture = new FixtureDef();
+			fixture.shape = shape;
+			fixture.friction = 0;
+			fixture.isSensor = true;
+			oBody.createFixture(fixture);
+			//para que no rote el cuadro
+			oBody.setUserData(oTortuga);
+			arrTortugas.add(oTortuga);
+	
 }
 private void crearMonedas() {
 	float x = Oran.nextFloat() * Screens.WORLD_WIDTH - .3f;
@@ -231,10 +272,22 @@ public void update(float delta,float acel_x,boolean jump) {
 		{
 			updateMonedas(delta,body);
 		}
+		if(body.getUserData() instanceof Tortuga)
+		{
+			updateTortuga(delta,body);
+		}
+		if(OGato.state == Gato.State.muerto && OGato.statetime > 3)
+		{
+			state = State.GameOver;
+		}
 		
 	}
 }
 
+private void updateTortuga(float delta, Body body) {
+	Tortuga obj = (Tortuga) body.getUserData();
+		obj.update(body, delta);
+}
 private void updateMonedas(float delta, Body body) {
 	Moneda obj = (Moneda) body.getUserData();
 // el .3 es por el tiempo qeu dura la animacion
@@ -315,6 +368,11 @@ public class Colisiones implements ContactListener {
 			Moneda obj = (Moneda) Ootracosa;
 			obj.Hit();
 			monedas++;
+		}
+		else if (Ootracosa instanceof Tortuga)
+		{
+			//si choca con la tortuga mandamos llamar el metodo de muerto
+			oGato.hit();
 		}
 	}
 

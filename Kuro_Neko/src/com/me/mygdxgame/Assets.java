@@ -17,6 +17,7 @@ public class Assets {
 	public static AtlasRegion btnSelDerecha;
 	public static AtlasRegion btnSelIzquierda;
 	public static Animation Kuro;
+	public static Animation nyancat;
 	public static AtlasRegion fondo;
 	public static AtlasRegion fondochico;
 	public static AtlasRegion plataforma;
@@ -36,6 +37,12 @@ public class Assets {
 		AtlasRegion K5 = atlas.findRegion("frame4");
 		
 		Kuro = new Animation(0.15f, K1,K2,K3,K4,K5);
+		
+		AtlasRegion G1 = atlas.findRegion("game1");
+		AtlasRegion G2 = atlas.findRegion("game2");
+		AtlasRegion G3 = atlas.findRegion("game3");
+		
+		nyancat = new Animation(0.1f, G1,G2,G3);
 		
 		Font = new BitmapFont();
 		Kuro_quieto = atlas.findRegion("frame2");
