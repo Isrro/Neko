@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.me.objetos.Moneda;
 import com.me.objetos.Gato;
+import com.me.objetos.PlataformaSingle;
 import com.me.mygdxgame.Assets;
 import com.me.screens.Screens;
 import com.me.game.WorldGame;
@@ -46,6 +47,11 @@ public class WorldGameRender {
 		batcher.enableBlending();
 		dibujarGato();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		dibujarPlataformas();
+		dibujarMonedas();
+>>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
 =======
 		dibujarPlataformas();
 		dibujarMonedas();
@@ -55,7 +61,10 @@ public class WorldGameRender {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
 	private void dibujarMonedas() {
 int length = oWorld.arrMonedas.size;
 		
@@ -83,6 +92,9 @@ int length = oWorld.arrMonedas.size;
 		
 	}
 
+<<<<<<< HEAD
+>>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
+=======
 >>>>>>> 70cb6a0f8dc238b420badba181f5653d4a728610
 	private void dibujarGato() {
 		TextureRegion keyframe;
