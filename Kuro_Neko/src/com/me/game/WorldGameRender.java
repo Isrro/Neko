@@ -102,8 +102,11 @@ int length = oWorld.arrMonedas.size;
 		
 	}
 
-	private void dibujarGato() {
+	private void dibujarGato()
+	{
 		TextureRegion keyframe;
+		
+		
 		if(oWorld.OGato.state == Gato.State.saltando)
 		{
 			keyframe = Assets.Kuro.getKeyFrame(oWorld.OGato.statetime, true);
@@ -112,14 +115,18 @@ int length = oWorld.arrMonedas.size;
 		{
 			keyframe = Assets.Kuro.getKeyFrame(oWorld.OGato.statetime, true);
 		}
+		else if(oWorld.OGato.state ==Gato.State.muerto)
+		{
+			keyframe = Assets.Kuro.getKeyFrame(oWorld.OGato.statetime, false);
+		}
 		else
 			keyframe = Assets.Kuro.getKeyFrame(oWorld.OGato.statetime, true);
 		
 		if(oWorld.OGato.lado== 1)
-		    batcher.draw(keyframe, oWorld.OGato.position.x -0.20f, oWorld.OGato.position.y-0.3f, 0.7f, .6f);
+				batcher.draw(keyframe, oWorld.OGato.position.x -0.20f, oWorld.OGato.position.y-0.3f, 0.7f, .6f);
 		else 
-			batcher.draw(keyframe, oWorld.OGato.position.x +0.20f, oWorld.OGato.position.y-0.3f, -0.7f, .6f);
-		
+				batcher.draw(keyframe, oWorld.OGato.position.x +0.20f, oWorld.OGato.position.y-0.3f, -0.7f, .6f);
+	
 		
 	}
 	private void renderBackground(float delta) {
