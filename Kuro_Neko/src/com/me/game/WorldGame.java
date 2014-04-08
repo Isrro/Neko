@@ -42,7 +42,7 @@ Array<Moneda> arrMonedas;
 Array<Tortuga> arrTortugas;
 Random Oran;
 int monedas;
-public float time = 3;
+public float time = 5;
 
 public WorldGame()
 {
