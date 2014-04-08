@@ -42,7 +42,7 @@ Array<Moneda> arrMonedas;
 Array<Tortuga> arrTortugas;
 Random Oran;
 int monedas;
-public float time = 300;
+public float time = 3;
 
 public WorldGame()
 {
@@ -326,7 +326,9 @@ private void updateCuadro(float delta, Body body) {
 }
 
 public void updateGato(float delta, Body body, float acel_x,boolean jump) {
-	OGato.update(delta, body, acel_x,jump);		
+	OGato.update(delta, body, acel_x,jump,time);	
+	
+	
 }
 public class Colisiones implements ContactListener {
 
