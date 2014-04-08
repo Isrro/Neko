@@ -17,6 +17,7 @@ public class Assets {
 	public static AtlasRegion btnSelDerecha;
 	public static AtlasRegion btnSelIzquierda;
 	public static Animation Kuro;
+	public static Animation monkey;
 	public static Animation nyancat;
 	public static AtlasRegion fondo;
 	public static AtlasRegion fondochico;
@@ -37,6 +38,22 @@ public class Assets {
 		AtlasRegion K5 = atlas.findRegion("frame4");
 		
 		Kuro = new Animation(0.15f, K1,K2,K3,K4,K5);
+		
+		
+		AtlasRegion c1 = atlas.findRegion("0");
+		AtlasRegion c2 = atlas.findRegion("1");
+		AtlasRegion c3 = atlas.findRegion("2");
+		AtlasRegion c4 = atlas.findRegion("3");
+		AtlasRegion c5 = atlas.findRegion("4");
+		AtlasRegion c6 = atlas.findRegion("5");
+		AtlasRegion c7 = atlas.findRegion("6");
+		AtlasRegion c8 = atlas.findRegion("7");
+		AtlasRegion c9 = atlas.findRegion("8");
+		AtlasRegion c10 = atlas.findRegion("9");
+		AtlasRegion c11 = atlas.findRegion("10");
+		
+		monkey= new Animation(0.05f, c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11);
+
 		
 		AtlasRegion G1 = atlas.findRegion("game1");
 		AtlasRegion G2 = atlas.findRegion("game2");
