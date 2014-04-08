@@ -276,7 +276,7 @@ public void update(float delta,float acel_x,boolean jump) {
 		{
 			updateTortuga(delta,body);
 		}
-		if(OGato.state == Gato.State.muerto && OGato.statetime > 3)
+		if(OGato.state == Gato.State.muerto)
 		{
 			state = State.GameOver;
 		}
