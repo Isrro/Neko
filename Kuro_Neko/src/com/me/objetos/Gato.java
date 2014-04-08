@@ -26,35 +26,40 @@ public class Gato {
 
 	}
 
-	public void update(float delta, Body body, float acelx, boolean jump) {
+	public void update(float delta, Body body, float acelx, boolean jump,float time) {
 		
 		
 		position.x = body.getPosition().x;
 		position.y = body.getPosition().y;
 		velocidad = body.getLinearVelocity();
-		if(state !=Gato.State.muerto)
-		{
+		
 		if(state != State.muerto)
 		{
-		body.setLinearVelocity(acelx*5,velocidad.y);
-		if (jump && state ==State.standing) 
-		{
-			//jump = false;			
-			state = State.saltando;
-			statetime = 0;
-			//para que sale mas		
-			body.setLinearVelocity(velocidad.x, 5);
+			body.setLinearVelocity(acelx*5,velocidad.y);
+			if (jump && state ==State.standing) 
+			{
+				//jump = false;	
+				state = State.saltando;
+				statetime = 0;
+				//para que sale mas		
+				body.setLinearVelocity(velocidad.x, 5);
+			}
+			
+			if(state == State.saltando)
+				if (velocidad.y < 0 && state != State.cayendo)
+				{
+					state = State.cayendo;
+					statetime = 0;
+				}
+			
+			if(time < 1)
+			{
+				state= State.muerto;
+			    statetime=0;
+			}
 			
 		}
 		
-		if(state == State.saltando)
-			if (velocidad.y < 0 && state != State.cayendo)
-			{
-				state = State.cayendo;
-				statetime = 0;
-		}
-		}
-		}
 		statetime+=delta;
 		//body.setLinearVelocity(acelx*5,velocidad.y);
 

@@ -2,60 +2,130 @@ kuro.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-main3
+0
   rotate: false
-  xy: 2, 2
-  size: 1060, 529
-  orig: 1060, 529
+  xy: 1176, 172
+  size: 75, 75
+  orig: 75, 75
   offset: 0, 0
   index: -1
-frame2
+1
   rotate: false
-  xy: 807, 533
-  size: 182, 162
-  orig: 182, 162
+  xy: 1253, 95
+  size: 75, 75
+  orig: 75, 75
   offset: 0, 0
   index: -1
-btnSelIzquierda
+10
   rotate: false
-  xy: 1447, 893
-  size: 98, 95
-  orig: 98, 95
+  xy: 1064, 156
+  size: 75, 75
+  orig: 75, 75
   offset: 0, 0
   index: -1
-frame1
+11
   rotate: false
-  xy: 807, 697
-  size: 182, 161
-  orig: 182, 161
+  xy: 1176, 95
+  size: 75, 75
+  orig: 75, 75
   offset: 0, 0
   index: -1
-siguiente
+2
   rotate: false
-  xy: 1176, 2
+  xy: 1064, 79
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 1064, 2
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 1299, 848
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 1222, 848
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 1145, 850
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 1068, 850
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 991, 850
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 1064, 2
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+anterior
+  rotate: false
+  xy: 1270, 2
   size: 92, 91
   orig: 92, 91
   offset: 0, 0
   index: -1
-btnSelDerecha
+barraNomEq
   rotate: false
-  xy: 1547, 2
-  size: 98, 95
-  orig: 98, 95
+  xy: 1262, 925
+  size: 278, 96
+  orig: 278, 96
+  offset: 0, 0
+  index: -1
+barraSeleccion
+  rotate: false
+  xy: 1542, 2
+  size: 278, 100
+  orig: 278, 100
   offset: 0, 0
   index: -1
 btnEmpezar
   rotate: false
-  xy: 1245, 893
+  xy: 1060, 927
   size: 200, 95
   orig: 200, 95
   offset: 0, 0
   index: -1
-game1
+btnSelDerecha
   rotate: false
-  xy: 843, 860
-  size: 34, 34
-  orig: 34, 34
+  xy: 1376, 99
+  size: 98, 95
+  orig: 98, 95
+  offset: 0, 0
+  index: -1
+btnSelIzquierda
+  rotate: false
+  xy: 1376, 2
+  size: 98, 95
+  orig: 98, 95
   offset: 0, 0
   index: -1
 frame0
@@ -65,23 +135,51 @@ frame0
   orig: 182, 155
   offset: 0, 0
   index: -1
-plataforma
+frame1
   rotate: false
-  xy: 2, 936
-  size: 1056, 78
-  orig: 1056, 78
+  xy: 807, 697
+  size: 182, 161
+  orig: 182, 161
+  offset: 0, 0
+  index: -1
+frame2
+  rotate: false
+  xy: 807, 533
+  size: 182, 162
+  orig: 182, 162
+  offset: 0, 0
+  index: -1
+frame3
+  rotate: false
+  xy: 991, 533
+  size: 183, 158
+  orig: 183, 158
   offset: 0, 0
   index: -1
 frame4
   rotate: false
-  xy: 1060, 850
+  xy: 1175, 693
   size: 183, 153
   orig: 183, 153
+  offset: 0, 0
+  index: -1
+game1
+  rotate: false
+  xy: 843, 860
+  size: 34, 34
+  orig: 34, 34
   offset: 0, 0
   index: -1
 game2
   rotate: false
   xy: 807, 896
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+game3
+  rotate: false
+  xy: 807, 860
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
@@ -93,38 +191,24 @@ main2
   orig: 803, 401
   offset: 0, 0
   index: -1
-barraSeleccion
+main3
   rotate: false
-  xy: 1175, 693
-  size: 278, 100
-  orig: 278, 100
+  xy: 2, 2
+  size: 1060, 529
+  orig: 1060, 529
   offset: 0, 0
   index: -1
-frame3
+plataforma
   rotate: false
-  xy: 991, 533
-  size: 183, 158
-  orig: 183, 158
+  xy: 2, 936
+  size: 1056, 78
+  orig: 1056, 78
   offset: 0, 0
   index: -1
-anterior
+siguiente
   rotate: false
-  xy: 1064, 2
+  xy: 1176, 2
   size: 92, 91
   orig: 92, 91
-  offset: 0, 0
-  index: -1
-barraNomEq
-  rotate: false
-  xy: 1245, 795
-  size: 278, 96
-  orig: 278, 96
-  offset: 0, 0
-  index: -1
-game3
-  rotate: false
-  xy: 807, 860
-  size: 34, 34
-  orig: 34, 34
   offset: 0, 0
   index: -1
